@@ -16,7 +16,9 @@ import com.simplemobiletools.calculator.Constants;
 import com.simplemobiletools.calculator.Formatter;
 import com.simplemobiletools.calculator.R;
 import com.simplemobiletools.calculator.Utils;
-
+import com.microsoft.azure.mobile.MobileCenter;
+import com.microsoft.azure.mobile.analytics.Analytics;
+import com.microsoft.azure.mobile.crashes.Crashes;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,6 +40,9 @@ public class MainActivity extends SimpleActivity implements Calculator {
         mCalc = new CalculatorImpl(this);
         AutofitHelper.create(mResult);
         AutofitHelper.create(mFormula);
+        
+        MobileCenter.start(getApplication(), "e13c9b46-e92e-46a9-b7ff-2f640ff725c3",
+                   Analytics.class, Crashes.class);
     }
 
     @Override
