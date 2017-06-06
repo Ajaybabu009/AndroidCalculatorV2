@@ -41,8 +41,7 @@ public class MainActivity extends SimpleActivity implements Calculator {
         AutofitHelper.create(mResult);
         AutofitHelper.create(mFormula);
         
-        MobileCenter.start(getApplication(), "e13c9b46-e92e-46a9-b7ff-2f640ff725c3",
-                   Analytics.class, Crashes.class);
+     MobileCenter.start(getApplication(), "{Your App Secret}", Analytics.class, Crashes.class);
     }
 
     @Override
